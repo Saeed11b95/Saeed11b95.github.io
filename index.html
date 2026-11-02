@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Saeed Ahmad — AI / ML Engineer</title>
+<meta name="description" content="Saeed Ahmad — Senior AI Engineer building LLM systems, knowledge graphs, agentic AI, medical imaging and document AI. TEDS 98.51 on PubTabNet, 99.45 on FinTabNet.">
+<meta property="og:title" content="Saeed Ahmad — AI / ML Engineer">
+<meta property="og:description" content="LLM systems, knowledge graphs, agentic AI, medical imaging and document AI.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://saeed11b95.github.io/saeed.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230f766e'/><text x='50' y='67' font-size='52' text-anchor='middle' fill='white' font-family='monospace' font-weight='700'>SA</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fafaf9; --surface:#ffffff; --surface-2:#f4f4f2; --text:#1c1917; --muted:#57534e; --faint:#a8a29e;
+  --border:#e7e5e4; --accent:#0f766e; --accent-soft:#ccfbf1; --accent-text:#115e59; --shadow:0 1px 2px rgba(0,0,0,.04),0 4px 16px rgba(0,0,0,.04);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0c0f0f; --surface:#141818; --surface-2:#1b2020; --text:#e7e5e4; --muted:#a8a29e; --faint:#6b6460;
+    --border:#262b2b; --accent:#2dd4bf; --accent-soft:#123b37; --accent-text:#5eead4; --shadow:none;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0c0f0f; --surface:#141818; --surface-2:#1b2020; --text:#e7e5e4; --muted:#a8a29e; --faint:#6b6460;
+  --border:#262b2b; --accent:#2dd4bf; --accent-soft:#123b37; --accent-text:#5eead4; --shadow:none;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font:16px/1.65 Inter,system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.mono{font-family:"JetBrains Mono",ui-monospace,monospace}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+
+/* nav */
+nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;gap:16px}
+.brand{font-weight:700;text-decoration:none;letter-spacing:-.01em}
+.brand span{color:var(--accent)}
+.links{display:flex;gap:22px;align-items:center;font-size:14px}
+.links a{text-decoration:none;color:var(--muted)}
+.links a:hover{color:var(--text)}
+.theme{background:none;border:1px solid var(--border);color:var(--muted);border-radius:8px;width:34px;height:34px;cursor:pointer;font-size:15px}
+@media (max-width:720px){.links a.hide-sm{display:none}}
+
+/* hero */
+.hero{padding:88px 0 56px}
+.hero-top{display:grid;grid-template-columns:1fr 220px;gap:40px;align-items:center}
+.portrait{width:220px;height:220px;border-radius:50%;object-fit:cover;border:4px solid var(--surface);box-shadow:0 0 0 1px var(--border),0 12px 40px rgba(15,118,110,.18)}
+@media (max-width:720px){.hero-top{grid-template-columns:1fr;gap:24px}.portrait{width:132px;height:132px;order:-1}}
+.eyebrow{font-size:13px;color:var(--accent-text);background:var(--accent-soft);display:inline-block;padding:4px 10px;border-radius:999px;margin-bottom:22px}
+h1{font-size:clamp(36px,6vw,58px);line-height:1.05;letter-spacing:-.035em;font-weight:800;margin-bottom:18px}
+.lede{font-size:clamp(17px,2.2vw,20px);color:var(--muted);max-width:680px;margin-bottom:30px}
+.lede strong{color:var(--text);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:10px;font-size:15px;font-weight:600;text-decoration:none;border:1px solid var(--border);background:var(--surface)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+:root[data-theme="dark"] .btn.primary{color:#04201d}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn.primary{color:#04201d}}
+.btn:hover{transform:translateY(-1px)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:52px}
+.stat{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow)}
+.stat b{display:block;font-size:26px;letter-spacing:-.02em;line-height:1.2}
+.stat span{font-size:13px;color:var(--muted)}
+@media (max-width:720px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+/* sections */
+section{padding:56px 0;border-top:1px solid var(--border)}
+h2{font-size:13px;text-transform:uppercase;letter-spacing:.12em;color:var(--accent-text);margin-bottom:8px;font-weight:600}
+.h2sub{font-size:26px;font-weight:700;letter-spacing:-.02em;margin-bottom:28px}
+
+/* timeline */
+.job{display:grid;grid-template-columns:180px 1fr;gap:24px;padding:20px 0;border-bottom:1px dashed var(--border)}
+.job:last-child{border-bottom:0}
+.when{font-size:13px;color:var(--muted)}
+.when .loc{display:block;color:var(--faint);margin-top:2px}
+.job h3{font-size:18px;letter-spacing:-.01em}
+.job .role{color:var(--accent-text);font-weight:500;font-size:15px;margin-bottom:8px}
+.job ul{padding-left:18px;color:var(--muted)}
+.job li{margin:4px 0}
+.job li strong{color:var(--text);font-weight:600}
+@media (max-width:720px){.job{grid-template-columns:1fr;gap:6px}}
+
+/* projects */
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media (max-width:720px){.grid{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:22px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.card .tag{font-size:12px;color:var(--faint);margin-bottom:6px}
+.card h3{font-size:18px;letter-spacing:-.01em;margin-bottom:8px}
+.card p{color:var(--muted);font-size:15px;margin-bottom:14px}
+.card .metric{font-size:13px;font-weight:600;color:var(--accent-text);margin-bottom:12px}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:12px;margin-bottom:14px}
+.flow span{background:var(--surface-2);border:1px solid var(--border);padding:3px 8px;border-radius:6px}
+.flow i{font-style:normal;color:var(--faint)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
+.chip{font-size:12px;padding:3px 9px;border-radius:999px;background:var(--surface-2);color:var(--muted);border:1px solid var(--border)}
+.card.wide{grid-column:1/-1}
+
+/* repos */
+.repos{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media (max-width:720px){.repos{grid-template-columns:1fr}}
+.repo{display:block;text-decoration:none;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px}
+.repo:hover{border-color:var(--accent)}
+.repo b{font-size:14px}
+.repo p{font-size:14px;color:var(--muted);margin-top:4px}
+.repo .lang{font-size:12px;color:var(--faint);margin-top:8px}
+
+/* skills */
+.skills{display:grid;grid-template-columns:160px 1fr;gap:12px 24px}
+.skills dt{font-weight:600;font-size:14px;padding-top:2px}
+.skills dd{display:flex;flex-wrap:wrap;gap:6px}
+@media (max-width:720px){.skills{grid-template-columns:1fr;gap:4px}.skills dd{margin-bottom:12px}}
+
+/* misc */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:720px){.two{grid-template-columns:1fr}}
+.plain{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:22px}
+.plain h3{font-size:17px;margin-bottom:4px}
+.plain p{color:var(--muted);font-size:15px}
+.pill{display:inline-block;font-size:12px;padding:2px 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent-text);margin-top:8px}
+footer{padding:56px 0 72px;border-top:1px solid var(--border)}
+footer .big{font-size:clamp(24px,4vw,34px);font-weight:700;letter-spacing:-.02em;margin-bottom:16px}
+footer small{display:block;margin-top:36px;color:var(--faint);font-size:13px}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand mono" href="#">saeed<span>.</span>ahmad</a>
+    <div class="links">
+      <a href="#experience" class="hide-sm">Experience</a>
+      <a href="#work">Work</a>
+      <a href="#skills" class="hide-sm">Skills</a>
+      <a href="#contact">Contact</a>
+      <button class="theme" id="theme" aria-label="Toggle color theme"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:middle"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-top">
+      <div>
+        <div class="eyebrow mono">Senior AI Engineer · Islamabad, Pakistan</div>
+        <h1>I build AI systems that go to production.</h1>
+        <p class="lede">I work on <strong>LLM and agentic systems</strong>, <strong>knowledge graphs</strong>, <strong>medical imaging</strong> and <strong>document AI</strong>, from data pipelines and model training through optimized serving. MS in Artificial Intelligence from NUST.</p>
+      </div>
+      <img class="portrait" src="saeed.jpg" alt="Portrait of Saeed Ahmad" width="220" height="220">
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="Saeed_Ahmad_Resume.pdf" target="_blank" rel="noopener">Download résumé</a>
+      <a class="btn" href="mailto:saeed11b95@gmail.com">Email me</a>
+      <a class="btn" href="https://linkedin.com/in/saeed-ahmad-b35aa9b1" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/Saeed11b95" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b class="mono">98.51</b><span>TEDS on PubTabNet</span></div>
+      <div class="stat"><b class="mono">99.45</b><span>TEDS on FinTabNet</span></div>
+      <div class="stat"><b class="mono">1M+</b><span>job titles classified, 20 languages</span></div>
+      <div class="stat"><b class="mono">5×</b><span>lower inference latency</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="experience">
+  <div class="wrap">
+    <h2 class="mono">Experience</h2>
+    <p class="h2sub">Where I've worked</p>
+
+    <div class="job">
+      <div class="when mono">Jul 2026 — Present<span class="loc">Islamabad · On-site</span></div>
+      <div>
+        <h3>Systems Limited</h3>
+        <div class="role">Senior AI Engineer</div>
+        <ul>
+          <li>Building an enterprise <strong>HR data chatbot</strong> with employee, admin, client-admin and company-wide personas. It covers personal HR data, <strong>benefits and retirement planning</strong> suggestions, and workforce trends for admins.</li>
+          <li>Designed the <strong>knowledge graph ontology</strong> and built the ingestion and sync pipeline from the <strong>Microsoft Fabric</strong> lakehouse gold layer into <strong>Neo4j</strong>, carrying source-system <strong>RBAC</strong> into the graph.</li>
+          <li>Built the <strong>LangGraph</strong> orchestration and role-based question answering layer, deployed on <strong>OpenShift</strong>. Now building the automated test suite for all use cases.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="when mono">Aug 2025 — Jun 2026<span class="loc">Lahore · On-site</span></div>
+      <div>
+        <h3>PyFlowLabs</h3>
+        <div class="role">Senior Machine Learning Engineer</div>
+        <ul>
+          <li>Built knowledge graphs, multi-agent pipelines and domain RAG for <strong>automotive parts</strong> and <strong>HR</strong>.</li>
+          <li>Fine-tuned <strong>LLaVA 7B</strong> with a privacy-preserving split-inference design.</li>
+          <li>Built <strong>Odyn</strong>, a GPU container orchestration platform, from scratch in Go.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="when mono">Jan 2025 — Jul 2025<span class="loc">Opthalytics Inc. (USA) · Remote</span></div>
+      <div>
+        <h3>Opthalytics</h3>
+        <div class="role">Deep Learning Engineer</div>
+        <ul>
+          <li>Trained <strong>lesion detection</strong> models and developed <strong>diabetic retinopathy</strong> prediction algorithms on ultra-widefield and fundus retinal images.</li>
+          <li>Built an Azure data platform with image tracking, <strong>deduplication</strong>, ophthalmologist labeling and review in self-hosted <strong>CVAT</strong>, and <strong>FiftyOne</strong> for model evaluation.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="when mono">Sep 2022 — Dec 2024<span class="loc">Kuala Lumpur · On-site</span></div>
+      <div>
+        <h3>TheWalnut.ai</h3>
+        <div class="role">Machine Learning Engineer</div>
+        <ul>
+          <li>Reached <strong>TEDS 98.51</strong> (PubTabNet) and <strong>99.45</strong> (FinTabNet) on table structure recognition.</li>
+          <li>Fine-tuned LayoutLMv3 / Florence-2 class models with LoRA/PEFT on 10⁴–10⁵ pages using PyTorch DDP.</li>
+          <li>Cut inference latency <strong>5×</strong> with ONNX, TensorRT, OpenVINO, PagedAttention and dynamic batching.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="when mono">Apr 2022 — Aug 2022<span class="loc">Islamabad · On-site</span></div>
+      <div>
+        <h3>VisionLab, SEECS NUST</h3>
+        <div class="role">Research Assistant</div>
+        <ul><li>Trained models to detect crop disease from drone imagery for a government-funded smart agriculture project.</li></ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="when mono">2015 — 2022<span class="loc">China &amp; Pakistan</span></div>
+      <div>
+        <h3>Huaneng Power International</h3>
+        <div class="role">Mechanical Engineer &amp; Supply Chain Manager</div>
+        <ul><li>Directed commissioning of a <strong>1,230 MW</strong> supercritical power plant before moving into machine learning.</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <h2 class="mono">Selected work</h2>
+    <p class="h2sub">Systems I've designed and built</p>
+    <div class="grid">
+
+      <article class="card wide">
+        <div class="tag mono">Systems Limited · 2026</div>
+        <h3>Role-aware HR data chatbot</h3>
+        <div class="flow mono"><span>Fabric lakehouse</span><i>→</i><span>gold layer</span><i>→</i><span>Neo4j + RBAC</span><i>→</i><span>LangGraph</span><i>→</i><span>persona-scoped answers</span></div>
+        <p>A conversational HR assistant where every answer is scoped to who is asking. Employees see their own data and get benefits and retirement planning suggestions. Admins at three access levels explore workforce trends. I designed the graph ontology, the sync pipeline that carries source-system permissions into Neo4j, and the LangGraph orchestration layer.</p>
+        <div class="chips"><span class="chip">LangGraph</span><span class="chip">Neo4j</span><span class="chip">Microsoft Fabric</span><span class="chip">RBAC</span><span class="chip">OpenShift</span><span class="chip">Azure</span></div>
+      </article>
+
+      <article class="card">
+        <div class="tag mono">Opthalytics · 2025</div>
+        <h3>Diabetic retinopathy detection</h3>
+        <p>Lesion detection models and DR prediction on ultra-widefield and fundus imaging. Built the data platform behind them: deduplicated onboarding, labeling and cross-review by ophthalmologists in CVAT, and error analysis in FiftyOne.</p>
+        <div class="chips"><span class="chip">PyTorch</span><span class="chip">Medical imaging</span><span class="chip">CVAT</span><span class="chip">FiftyOne</span><span class="chip">Azure</span></div>
+      </article>
+
+      <article class="card">
+        <div class="tag mono">PyFlowLabs · 2025–26</div>
+        <h3>Odyn: GPU container cloud</h3>
+        <p>A RunPod-style GPU platform built from scratch. It has a Go/gRPC control plane, node agents that need zero inbound ports thanks to FRP tunneling, Docker + NVIDIA containers, and Ray Serve LLM routing behind an OpenAI-compatible API.</p>
+        <div class="chips"><span class="chip">Go</span><span class="chip">gRPC</span><span class="chip">Ray Serve</span><span class="chip">Docker</span><span class="chip">NVIDIA</span></div>
+      </article>
+
+      <article class="card">
+        <div class="tag mono">PyFlowLabs · 2025–26</div>
+        <h3>Auto parts knowledge graph &amp; DIY repair agent</h3>
+        <p>Extracted part standards from OEM and web data into a graph of cross-references, successions and fitment, plus a standards RAG knowledge base. An agent built on top guides diagnosis and repair.</p>
+        <div class="chips"><span class="chip">LangGraph</span><span class="chip">Neo4j</span><span class="chip">ChromaDB</span><span class="chip">Azure OpenAI</span></div>
+      </article>
+
+      <article class="card">
+        <div class="tag mono">PyFlowLabs · 2025–26</div>
+        <h3>Privacy-preserving visual recommendations</h3>
+        <p>Fine-tuned LLaVA 7B on 50K image-caption pairs. A split-inference design keeps the vision encoder on-device so raw images never leave the phone. Captions are linked to Wikidata entities for recommendations.</p>
+        <div class="metric mono">50K pairs · TensorRT serving</div>
+        <div class="chips"><span class="chip">LLaVA</span><span class="chip">PEFT</span><span class="chip">TensorRT</span><span class="chip">Entity linking</span></div>
+      </article>
+
+      <article class="card">
+        <div class="tag mono">PyFlowLabs · 2025–26</div>
+        <h3>HR profession ontology</h3>
+        <p>A 3-tier taxonomy (job family → occupation → title) with linked skills. LLM pipelines classified over a million LinkedIn job titles, and a multi-agent system matches candidates to jobs.</p>
+        <div class="metric mono">1M+ titles · 20 languages</div>
+        <div class="chips"><span class="chip">LangGraph</span><span class="chip">Neo4j</span><span class="chip">LangSmith</span></div>
+      </article>
+
+      <article class="card">
+        <div class="tag mono">TheWalnut.ai · 2022–24</div>
+        <h3>Financial document intelligence</h3>
+        <p>OCR, multimodal layout detection, table structure recognition, hierarchy construction and agentic validation, producing structured financials for credit risk assessment.</p>
+        <div class="metric mono">TEDS 98.51 PubTabNet · 99.45 FinTabNet</div>
+        <div class="chips"><span class="chip">LayoutLMv3</span><span class="chip">LoRA</span><span class="chip">ONNX</span><span class="chip">OpenVINO</span></div>
+      </article>
+
+      <article class="card">
+        <div class="tag mono">Freelance · 2024</div>
+        <h3>Low-resource translation: Quechua ↔ English</h3>
+        <p>Fine-tuned Meta's NLLB for educational content in one of the lowest-resource language pairs, using QLoRA and full fine-tuning on multi-GPU DDP. Evaluated with BLEU and chrF.</p>
+        <div class="chips"><span class="chip">NLLB</span><span class="chip">QLoRA</span><span class="chip">PyTorch DDP</span></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="code">
+  <div class="wrap">
+    <h2 class="mono">Open source</h2>
+    <p class="h2sub">On GitHub</p>
+    <div class="repos">
+      <a class="repo" href="https://github.com/Saeed11b95/LMV3" target="_blank" rel="noopener"><b class="mono">LMV3</b><p>LayoutLMv3 experiments for document understanding.</p><div class="lang mono">Python</div></a>
+      <a class="repo" href="https://github.com/Saeed11b95/Quantization" target="_blank" rel="noopener"><b class="mono">Quantization</b><p>Quantization, pruning and ONNX conversion experiments on the VGT model.</p><div class="lang mono">Jupyter Notebook</div></a>
+      <a class="repo" href="https://github.com/Saeed11b95/ANN-From-Scratch-in-C-" target="_blank" rel="noopener"><b class="mono">ANN-From-Scratch-in-C-</b><p>A neural network implemented from first principles in C.</p><div class="lang mono">C</div></a>
+      <a class="repo" href="https://github.com/Saeed11b95/VGT" target="_blank" rel="noopener"><b class="mono">VGT</b><p>Vision Grid Transformer for document layout analysis.</p><div class="lang mono">Jupyter Notebook</div></a>
+      <a class="repo" href="https://github.com/Saeed11b95/CV-Parser" target="_blank" rel="noopener"><b class="mono">CV-Parser</b><p>Parsing structured information out of résumés.</p><div class="lang mono">Python</div></a>
+      <a class="repo" href="https://github.com/Saeed11b95?tab=repositories" target="_blank" rel="noopener"><b class="mono">All repositories →</b><p>Coursework, computer vision assignments and experiments.</p><div class="lang mono">github.com/Saeed11b95</div></a>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2 class="mono">Skills</h2>
+    <p class="h2sub">Tools I use</p>
+    <dl class="skills">
+      <dt>LLMs &amp; agents</dt><dd><span class="chip">LangGraph</span><span class="chip">LangChain</span><span class="chip">LangSmith</span><span class="chip">RAG</span><span class="chip">Multi-agent systems</span><span class="chip">Azure OpenAI</span></dd>
+      <dt>Knowledge graphs</dt><dd><span class="chip">Neo4j</span><span class="chip">Ontology design</span><span class="chip">Entity linking</span><span class="chip">RBAC</span><span class="chip">ChromaDB</span></dd>
+      <dt>Deep learning</dt><dd><span class="chip">PyTorch</span><span class="chip">Hugging Face</span><span class="chip">LoRA / QLoRA / PEFT</span><span class="chip">PyTorch DDP</span><span class="chip">Knowledge distillation</span><span class="chip">Self-supervised learning</span></dd>
+      <dt>Vision &amp; documents</dt><dd><span class="chip">Medical imaging</span><span class="chip">Object detection</span><span class="chip">Table structure recognition</span><span class="chip">OCR</span><span class="chip">LayoutLMv3</span><span class="chip">LLaVA</span></dd>
+      <dt>Serving</dt><dd><span class="chip">TensorRT</span><span class="chip">ONNX</span><span class="chip">OpenVINO</span><span class="chip">PagedAttention</span><span class="chip">Ray Serve</span><span class="chip">FastAPI</span></dd>
+      <dt>Data &amp; infra</dt><dd><span class="chip">Microsoft Fabric</span><span class="chip">Azure</span><span class="chip">OpenShift</span><span class="chip">AWS</span><span class="chip">Docker</span><span class="chip">CVAT</span><span class="chip">FiftyOne</span><span class="chip">WandB</span></dd>
+      <dt>Languages</dt><dd><span class="chip">Python</span><span class="chip">Go</span><span class="chip">C++</span><span class="chip">SQL</span></dd>
+    </dl>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <h2 class="mono">Research &amp; education</h2>
+    <p class="h2sub">Background</p>
+    <div class="two">
+      <div class="plain">
+        <h3>LEGR: Learnable Edge Graph Refinement for Table Structure Recognition</h3>
+        <p>First author. Submitted to <em>Artificial Intelligence</em> (Springer).</p>
+        <span class="pill mono">Under review</span>
+      </div>
+      <div class="plain">
+        <h3>MS Artificial Intelligence, NUST</h3>
+        <p>Islamabad, 2025 · CGPA 3.85 / 4.0</p>
+        <h3 style="margin-top:14px">BS Mechanical Engineering</h3>
+        <p>2015</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <p class="big">Let's build something.</p>
+    <div class="cta">
+      <a class="btn primary" href="mailto:saeed11b95@gmail.com">saeed11b95@gmail.com</a>
+      <a class="btn" href="https://linkedin.com/in/saeed-ahmad-b35aa9b1" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/Saeed11b95" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="Saeed_Ahmad_Resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a>
+    </div>
+    <small class="mono">© 2026 Saeed Ahmad · Rawalpindi, Pakistan</small>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement, key='theme';
+  try{var t=localStorage.getItem(key); if(t) root.setAttribute('data-theme',t);}catch(e){}
+  document.getElementById('theme').addEventListener('click',function(){
+    var cur=root.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+    var next=cur==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem(key,next);}catch(e){}
+  });
+})();
+</script>
+</body>
+</html>
